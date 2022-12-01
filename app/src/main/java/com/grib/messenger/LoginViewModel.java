@@ -20,6 +20,14 @@ public class LoginViewModel extends ViewModel {
 
     public LoginViewModel() {
         auth = FirebaseAuth.getInstance();
+        auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() != null) {
+                    user.setValue(firebaseAuth.getCurrentUser());
+                }
+            }
+        });
     }
 
     public LiveData<String> getError() {
@@ -34,7 +42,7 @@ public class LoginViewModel extends ViewModel {
         auth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                user.setValue(authResult.getUser());
+                //user.setValue(authResult.getUser());
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
