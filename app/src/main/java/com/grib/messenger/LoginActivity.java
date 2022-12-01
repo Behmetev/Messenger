@@ -33,7 +33,10 @@ public class LoginActivity extends AppCompatActivity {
         textViewForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // fp activity
+                Intent intent = ResetPasswordActivity.newIntent(
+                        LoginActivity.this,
+                        editTextEmail.getText().toString().trim());
+                startActivity(intent);
             }
         });
         textViewRegister.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.login);
-        textViewForgotPassword = findViewById(R.id.editTextPassword);
+        textViewForgotPassword = findViewById(R.id.textViewForgotPassword);
         textViewRegister = findViewById(R.id.textViewRegister);
     }
 }
