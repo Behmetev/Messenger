@@ -48,7 +48,7 @@
             android:inputType="textCapWords" />
 
         <EditText
-            android:id="@+id/editLastName"
+            android:id="@+id/editTextLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -56,7 +56,7 @@
             android:inputType="textCapWords" />
 
         <EditText
-            android:id="@+id/editAge"
+            android:id="@+id/editTextAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
